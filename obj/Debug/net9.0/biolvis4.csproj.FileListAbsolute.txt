@@ -64,3 +64,4 @@
 /home/bigem/RiderProjects/biolvis4/biolvis4/obj/Debug/net9.0/biolvis4.csproj.Up2Date
 /home/bigem/RiderProjects/biolvis4/biolvis4/obj/Debug/net9.0/biolvis4.genruntimeconfig.cache
 /home/bigem/RiderProjects/biolvis4/biolvis4/obj/Debug/net9.0/ref/biolvis4.dll
+/home/bigem/RiderProjects/biolvis4/biolvis4/obj/Debug/net9.0/biolvis4.sourcelink.json

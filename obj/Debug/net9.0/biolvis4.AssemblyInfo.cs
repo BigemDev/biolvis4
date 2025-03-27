@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("biolvis4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f89b2a85077e52b98039e3cea09590d8994ea62a")]
 [assembly: System.Reflection.AssemblyProductAttribute("biolvis4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("biolvis4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
