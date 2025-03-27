@@ -111,11 +111,49 @@ public partial class MainWindow : Window
                     var flippedBitmap = new SKBitmap(skBitmap.Width, skBitmap.Height);
                     using (var canvas = new SKCanvas(flippedBitmap))
                     {
-                        canvas.Scale(-1, 1, skBitmap.Width / 2f, 0);
+                        canvas.Scale(-1, 1, skBitmap.Width / 2f, skBitmap.Height / 2f);
                         canvas.DrawBitmap(skBitmap, 0, 0);
                     }
-
+    
                     using (var skImage = SKImage.FromBitmap(flippedBitmap))
+                    using (var data = skImage.Encode())
+                    {
+                        var newStream = new MemoryStream(data.ToArray());
+                        image.Source = new Bitmap(newStream);
+                    }
+                }
+            }
+        }
+    }
+
+    public void OnlyGreen(object sender, RoutedEventArgs e)
+    {
+        var image = this.FindControl<Image>("MainImage");
+        if (image != null && image.Source is Bitmap bitmap)
+        {
+            using (var stream = new MemoryStream())
+            {
+                bitmap.Save(stream);
+                stream.Position = 0;
+                using (var skBitmap = SKBitmap.Decode(stream))
+                {
+                    for (int x = 0; x < skBitmap.Width; x++)
+                    {
+                        for (int y = 0; y < skBitmap.Height; y++)
+                        {
+                            var color = skBitmap.GetPixel(x, y);
+                            if (color.Green > color.Red + color.Blue)
+                            { 
+                                skBitmap.SetPixel(x, y, color);
+                            }
+                            else
+                            {
+                                skBitmap.SetPixel(x, y, SKColors.Black);
+                            }
+                        }
+                    }
+    
+                    using (var skImage = SKImage.FromBitmap(skBitmap))
                     using (var data = skImage.Encode())
                     {
                         var newStream = new MemoryStream(data.ToArray());

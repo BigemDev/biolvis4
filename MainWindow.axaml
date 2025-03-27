@@ -13,10 +13,10 @@
             <RadioButton GroupName="angles" Content="270" Checked="OnRotationChanged"/>
         </StackPanel>
         <!-- -->
+        <Button Content="Load" Click="LoadIMG"/>
         <Button Content="Invert Color" Click="InvCol"/>
         <Button Content="Upside Down" Click="UpsideDown"/>
-        <Button Content="Load" Click="LoadIMG"/>
-        
+        <Button Content="Only Green" Click="OnlyGreen"/>
         <Image Name="MainImage" Source="" Width="500" Height="800">
             <Image.RenderTransform>
                 <RotateTransform Angle="0" />
