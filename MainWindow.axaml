@@ -3,17 +3,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class=
-        "biolvis4.MainWindow"
+        x:Class="biolvis4.MainWindow"
         Title="biolvis4">
     <StackPanel Orientation="Horizontal">
-        <!-- <StackPanel> -->
-        <!-- <RadioButton GroupName="angles"/> -->
-        <!-- <RadioButton GroupName="angles"/> -->
-        <!-- <RadioButton GroupName="angles"/> -->
-        <!-- </StackPanel> -->
-        <!-- -->
+        <StackPanel>
+            <RadioButton GroupName="angles" Content="0" IsChecked="True" Checked="OnRotationChanged"/>
+            <RadioButton GroupName="angles" Content="90" Checked="OnRotationChanged"/>
+            <RadioButton GroupName="angles" Content="180" Checked="OnRotationChanged"/>
+            <RadioButton GroupName="angles" Content="270" Checked="OnRotationChanged"/>
+        </StackPanel>
+        
         <Button Content="Load" Click="LoadIMG"/>
-        <Image Name="MainImage" Source="" Width="500" Height="800"/> 
+        <Image Name="MainImage" Source="" Width="500" Height="800">
+            <Image.RenderTransform>
+                <RotateTransform Angle="0" />
+            </Image.RenderTransform>
+        </Image>
     </StackPanel>
 </Window>
